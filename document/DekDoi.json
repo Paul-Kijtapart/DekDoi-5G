@@ -1,0 +1,19 @@
+{
+	"Trirutda" : {
+		"name" : "Trirutda Nawattranakul",
+		"Work Experience" : [ {
+			"name" : "A",
+			"start" : "s",
+			"end" : "e",
+			"description" : "des",
+			"responsibilities" : [],
+			"icon" : "",
+			"images" : [
+			],
+			"link" : ""
+		}
+		],
+		"Education" : [
+		]
+	}
+}
