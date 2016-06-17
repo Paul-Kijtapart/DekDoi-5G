@@ -1,4 +1,7 @@
-body {height:100%;overflow:auto}
+hr {
+    margin: 5px 0px 5px 0px;
+}
+
 
 /*--- GENERIC METHODS ----*/
 
@@ -22,6 +25,7 @@ body {height:100%;overflow:auto}
     --blue: #4679bd;
     --grey: #ddd;
     --lightBlack: #303030;
+    --greenMark: #66a992;
     --white: #F0FFFF;
     --W200: 200px;
     --Lft: left;
@@ -30,33 +34,88 @@ body {height:100%;overflow:auto}
 
 /*--- NAVIGATION PART ---*/
 
+
+/*
+When the window get resized:
+
+1. Make sure the navbar move to top
+- content should move under
+
+2. the menu should turn into an icon that can be toggled.
+- Upon clicking the icon, the options will drop down.
+- When a user click one of the menu, the page should link.
+
+
+*/
+
 /*@media screen and (max-width: 860px) {
     .dekdoi-nav {
-        width:100%;
-        padding:10px 18px;
-        box-shadow:0px 1px 1px rgba(0,0,0,0.15);
-        border-radius:3px;
-        background:#303030;
+        width: 100%;
+        max-height: 50px;
+        padding: 10px 18px;
+    }
+    .dekdoi-nav ul.active {
+        display: none;
+    }
+    .toggle-nav:hover,
+    .toggle-nav.active {
+        color: var(--greenMark);
+    }
+    .dekdoi-nav hr {
+        display: none;
+    }
+    .dekdoi-nav h3 {
+        display: none;
+    }
+    .dekdoi-nav ul:after {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: 0%;
+        left: 22px;
+        content: '';
+        transform: translate(0%, -100%);
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid #303030;
     }
 }*/
 
 .dekdoi-nav {
     background-color: var(--blue);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
     min-height: 500px;
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     color: var(--white);
+    z-index: 130;
 }
 
-.dekdoi-nav h3 {
+.dekdoi-nav h3 {}
 
+.dekdoi-nav ul {
+    margin: 5px 0px 0px 5px;
+    display: inline-block;
 }
 
-.dekdoi-nav button {
+.dekdoi-nav li {
+    list-style: none;
     display: block;
     margin: 1px 0px 5px 0px;
     width: 100%;
+    font-size: 17px;
+}
+
+.dekdoi-nav a {
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+    color: inherit;
+}
+
+.dekdoi-nav a:hover,
+.current-item a {
+    color: var(--greenMark);
 }
 
 .toggle-nav {
@@ -68,6 +127,13 @@ body {height:100%;overflow:auto}
 
 
 /*--- MAIN CONTENT ---*/
+
+/*@media screen and (max-width: 860px) {
+    .dekdoi-content {
+        width: 100%;
+        position: block;
+    }
+}*/
 
 .dekdoi-content {
     background-color: var(--grey);
