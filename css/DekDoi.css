@@ -1,0 +1,34 @@
+
+/* GENERIC METHODS */
+.LEFT {float:left}
+
+.RIGHT {float:right}
+
+.CENTER {margin: 0 auto;}
+
+/* GLOBAL VARIABLES */
+:root {
+  --red: #b00;
+  --blue: #4679bd;
+  --grey: #ddd;
+  --W200: 200px;
+  --Lft: left;
+}
+
+/* NAVIGATION PART */
+.dekdoi-nav {
+	background-color: var(--blue);
+	min-height: 500px;
+}
+
+
+/* END OF NAVIGATION PART */
+
+/* MAIN CONTENT */
+.dekdoi-content {
+	background-color: var(--grey);
+	min-height: 500px;
+}
+
+
+/* END OF MAIN CONTENT */
