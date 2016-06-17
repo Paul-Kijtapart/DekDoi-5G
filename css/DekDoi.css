@@ -1,5 +1,9 @@
-hr {
-    margin: 5px 0px 5px 0px;
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    line-height: 1.5;
+    display: block;
 }
 
 
@@ -27,8 +31,8 @@ hr {
     --lightBlack: #303030;
     --greenMark: #66a992;
     --white: #F0FFFF;
-    --W200: 200px;
-    --Lft: left;
+    --sepLine: #d0d0d0;
+    --detail-size: 300px;
 }
 
 
@@ -48,49 +52,23 @@ When the window get resized:
 
 */
 
-/*@media screen and (max-width: 860px) {
-    .dekdoi-nav {
-        width: 100%;
-        max-height: 50px;
-        padding: 10px 18px;
-    }
-    .dekdoi-nav ul.active {
-        display: none;
-    }
-    .toggle-nav:hover,
-    .toggle-nav.active {
-        color: var(--greenMark);
-    }
-    .dekdoi-nav hr {
-        display: none;
-    }
-    .dekdoi-nav h3 {
-        display: none;
-    }
-    .dekdoi-nav ul:after {
-        width: 0px;
-        height: 0px;
-        position: absolute;
-        top: 0%;
-        left: 22px;
-        content: '';
-        transform: translate(0%, -100%);
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent;
-        border-bottom: 7px solid #303030;
-    }
-}*/
+nav div {
+    display: inline-block;
+}
+
+nav {
+    padding: 10px 10%;
+}
 
 .dekdoi-nav {
-    background-color: var(--blue);
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
-    border-radius: 3px;
-    min-height: 500px;
+    width: 100%;
     position: fixed;
     top: 0;
-    left: 0;
+    min-height: 50px;
+    background-color: var(--lightBlack);
+    z-index: 1000;
+    border-bottom: 1px solid var(--sepLine);
     color: var(--white);
-    z-index: 130;
 }
 
 .dekdoi-nav h3 {}
@@ -102,8 +80,8 @@ When the window get resized:
 
 .dekdoi-nav li {
     list-style: none;
-    display: block;
-    margin: 1px 0px 5px 0px;
+    display: inline;
+    padding: 1px 20px 5px 0px;
     width: 100%;
     font-size: 17px;
 }
@@ -127,6 +105,7 @@ When the window get resized:
 
 
 /*--- MAIN CONTENT ---*/
+
 
 /*@media screen and (max-width: 860px) {
     .dekdoi-content {
