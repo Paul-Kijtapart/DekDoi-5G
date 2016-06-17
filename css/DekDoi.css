@@ -1,34 +1,78 @@
+body {height:100%;overflow:auto}
 
-/* GENERIC METHODS */
-.LEFT {float:left}
+/*--- GENERIC METHODS ----*/
 
-.RIGHT {float:right}
+.LEFT {
+    float: left
+}
 
-.CENTER {margin: 0 auto;}
+.RIGHT {
+    float: right
+}
 
-/* GLOBAL VARIABLES */
+.CENTER {
+    margin: 0 auto;
+}
+
+
+/*--- GLOBAL VARIABLES ---*/
+
 :root {
-  --red: #b00;
-  --blue: #4679bd;
-  --grey: #ddd;
-  --W200: 200px;
-  --Lft: left;
+    --red: #b00;
+    --blue: #4679bd;
+    --grey: #ddd;
+    --lightBlack: #303030;
+    --white: #F0FFFF;
+    --W200: 200px;
+    --Lft: left;
 }
 
-/* NAVIGATION PART */
+
+/*--- NAVIGATION PART ---*/
+
+/*@media screen and (max-width: 860px) {
+    .dekdoi-nav {
+        width:100%;
+        padding:10px 18px;
+        box-shadow:0px 1px 1px rgba(0,0,0,0.15);
+        border-radius:3px;
+        background:#303030;
+    }
+}*/
+
 .dekdoi-nav {
-	background-color: var(--blue);
-	min-height: 500px;
+    background-color: var(--blue);
+    min-height: 500px;
+    position: fixed;
+    top:0;
+    left: 0;
+    color: var(--white);
+}
+
+.dekdoi-nav h3 {
+
+}
+
+.dekdoi-nav button {
+    display: block;
+    margin: 1px 0px 5px 0px;
+    width: 100%;
+}
+
+.toggle-nav {
+    display: none;
 }
 
 
-/* END OF NAVIGATION PART */
+/*--- END OF NAVIGATION PART ---*/
 
-/* MAIN CONTENT */
+
+/*--- MAIN CONTENT ---*/
+
 .dekdoi-content {
-	background-color: var(--grey);
-	min-height: 500px;
+    background-color: var(--grey);
+    min-height: 500px;
 }
 
 
-/* END OF MAIN CONTENT */
+/*--- END OF MAIN CONTENT ---*/

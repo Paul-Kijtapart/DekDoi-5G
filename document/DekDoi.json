@@ -1,76 +1,79 @@
 {
-	"Trirutda": {
-		"name": "Trirutda Nawattranakul",
-		"Work": [
-		{	"name": "Administrative Assistant",
-			"start": "December.2015",
-			"end": "December.2015",
-			"description": "des",
-			"responsibilities": [
-			"Used computer spreadsheet and database software to prepare forms and documents.",
-			"Prepared and sent outgoing mails and scanned paper documents to keep on files.", 
-			"Provided secretarial and administrative support to management and other staff" ],
-			"icon": "",
-			"images": [],
-			"link": "" }, 
-		{	"name": "Sale Associate",
-				"start": "September.2013",
-				"end": "December.2013",
-				"description": "des",
-				"responsibilities": [
-				"Resolved customer concerns by rectifying product and service problems.",
-				"Determined the cause of the problems; selected and explained the best solutions to solve the problems; expedited correction or adjustment; followed up to ensure satisfactory resolution."
-				],
-				"icon": "",
-				"images": [],
-				"link": ""
-			}
-			],
-			"Education": [{
-				"name" : "Administrative Assistant Certificate",
-				"start" : "May.2015",
-				"end" : "December.2015",
-				"location" : "Vancouver Community College, Vancouver, BC"
-				}, 
-				{
-					"name" : "Customer Service and Cashier Training Certificate",
-					"start" : "May.2012",
-					"end" : "May.2012",
-					"location" : "Diversecity Community, Surrey, BC"
-					}, 
-					{
-						"name" : "Adult Graduation Diploma",
-						"start" : "January.2012",
-						"end" : "January.2012",
-						"location" : "Adult Education Centres, Vancouver School Board"
-						}],
-						"volunteer": [{
-							"name": "Teaching Assistant for ESL Conversation Program",
-							"start": "September.2013",
-							"end": "December.2013",
-							"description": "des",
-							"responsibilities": [
-							"Led small groups of adults to support them in improving their English conversation skills."
-							],
-							"icon": "",
-							"images": [],
-							"link": ""
-							}],
-							"skill": [
-							{
-								"computer": [
-								"Proficient with Microsoft Office 2010:  Word, Excel, PowerPoint, Access, and Outlook",
-								"Experienced with electronic transcription and accounting",
-								"Able to troubleshoot basic computer problems",
-								"Used Adobe Creative Suite:  Photoshop CS5",
-								"Have basic knowledge of HTML"
-								]
-								},
-								"highlight" : [
-								]
-								]
-							}
-						}
-
-
-
+    "Trirutda": {
+        "name": "Trirutda Nawattranakul",
+        "Work": [
+            {
+                "name": "Administrative Assistant",
+                "start": "December.2015",
+                "end": "December.2015",
+                "description": "des",
+                "responsibilities": [
+                    "Used computer spreadsheet and database software to prepare forms and documents.",
+                    "Prepared and sent outgoing mails and scanned paper documents to keep on files.",
+                    "Provided secretarial and administrative support to management and other staff"
+                ],
+                "icon": "",
+                "images": [],
+                "link": ""
+            },
+            {
+                "name": "Sale Associate",
+                "start": "September.2013",
+                "end": "December.2013",
+                "description": "des",
+                "responsibilities": [
+                    "Resolved customer concerns by rectifying product and service problems.",
+                    "Determined the cause of the problems; selected and explained the best solutions to solve the problems; expedited correction or adjustment; followed up to ensure satisfactory resolution."
+                ],
+                "icon": "",
+                "images": [],
+                "link": ""
+            }
+        ],
+        "Education": [
+            {
+                "name": "Administrative Assistant Certificate",
+                "start": "May.2015",
+                "end": "December.2015",
+                "location": "Vancouver Community College, Vancouver, BC"
+            },
+            {
+                "name": "Customer Service and Cashier Training Certificate",
+                "start": "May.2012",
+                "end": "May.2012",
+                "location": "Diversecity Community, Surrey, BC"
+            },
+            {
+                "name": "Adult Graduation Diploma",
+                "start": "January.2012",
+                "end": "January.2012",
+                "location": "Adult Education Centres, Vancouver School Board"
+            }
+        ],
+        "volunteer": [
+            {
+                "name": "Teaching Assistant for ESL Conversation Program",
+                "start": "September.2013",
+                "end": "December.2013",
+                "description": "des",
+                "responsibilities": [
+                    "Led small groups of adults to support them in improving their English conversation skills."
+                ],
+                "icon": "",
+                "images": [],
+                "link": ""
+            }
+        ],
+        "skill": [
+            {
+                "computer": [
+                    "Proficient with Microsoft Office 2010:  Word, Excel, PowerPoint, Access, and Outlook",
+                    "Experienced with electronic transcription and accounting",
+                    "Able to troubleshoot basic computer problems",
+                    "Used Adobe Creative Suite:  Photoshop CS5",
+                    "Have basic knowledge of HTML"
+                ]
+            }
+        ]
+    }
+}
