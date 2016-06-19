@@ -124,7 +124,20 @@ section {
     overflow: auto;
     text-align: center;
     line-height: inherit;
+    font-size: 14px;
+    color: #555555;
     /*border-bottom: 2px solid black;*/
+}
+
+section .dekdoi-title {
+    color: #555555;
+    border-bottom: 3px solid #897f7f;
+    padding-bottom: 5px;
+    font-size: 28px;
+}
+
+section .content {
+    padding: 0 10%;
 }
 
 
@@ -141,17 +154,17 @@ section {
 
 /*--- START OF CONTACT ---*/
 
-.dekdoi-contact {
+.dekdoi-project {
     background-color: #f3cefc;
 }
 
 
-/*--- END OF CONTACT ---*/
+/*--- END OF PROJECT ---*/
 
 
-/*--- START OF RESUME ---*/
+/*--- START OF PROJECT ---*/
 
-.dekdoi-resume {
+.dekdoi-education {
     background-color: #fde6d0;
 }
 
@@ -161,7 +174,7 @@ section {
 
 /*--- START OF MEDIA ---*/
 
-.dekdoi-media {
+.dekdoi-contact {
     background-color: #d0fdfa;
     min-height: 90px;
 }
