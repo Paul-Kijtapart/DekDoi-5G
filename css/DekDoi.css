@@ -12,8 +12,8 @@
 }
 
 body {
-    height: 100%;
-    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
     margin: 0 auto;
     line-height: 1.5;
     display: block;
@@ -22,16 +22,8 @@ body {
 
 /*--- GENERIC METHODS ----*/
 
-.LEFT {
-    float: left
-}
-
-.RIGHT {
-    float: right
-}
-
-.CENTER {
-    margin: 0 auto;
+.CLEARFIX {
+    overflow: auto;
 }
 
 
@@ -51,53 +43,59 @@ When the window get resized:
 
 */
 
-nav div {
-    display: inline-block;
-}
-
 nav {
-    padding: 10px 10%;
-}
-
-.dekdoi-nav {
     top: 0;
     width: 100%;
     min-height: 70px;
+    display: block;
     position: fixed;
     background-color: white;
     color: #777777;
     font-weight: 600px;
     font-family: 'Raleway', sans-serif;
     z-index: 1000;
+    overflow: auto;
     border-bottom: 1px solid #d0d0d0;
 }
 
+.dekdoi-nav {}
+
 .nav-logo {}
 
-.dekdoi-nav h3 {}
+.dekdoi-nav h3 {
+    display: inline-block;
+   /* margin:inherit;
+    padding: inherit;*/
+}
 
 .dekdoi-nav ul {
-    padding-right: inherit;
+    list-style: none;
     display: inline-block;
+    text-align: center;
+    /*margin: 0;
+    padding: 0;*/
 }
 
 .dekdoi-nav li {
     list-style: none;
     display: inline;
-    padding: 1px 20px 5px 0px;
-    width: 100%;
-    font-size: 17px;
 }
 
 .dekdoi-nav a {
     text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
     color: inherit;
     text-decoration: none;
+    text-align: center;
+    padding: 1px 20px 5px 0px;
+    max-width: 100%;
+    font-size: 17px;
+    background-color: lightblue;
 }
 
 .dekdoi-nav a:hover,
 .current-item a {
     color: var(--greenMark);
+    background-color: #ddd;
 }
 
 .toggle-nav {
@@ -120,17 +118,20 @@ nav {
 
 section {
     min-height: 400px;
-    width: inherit;
-    background-color: grey;
-    border-bottom: 2px solid black;
+    max-width: 100%;
+    margin: inherit;
+    overflow: auto;
+    text-align: center;
+    line-height: inherit;
+    /*border-bottom: 2px solid black;*/
 }
 
 
 /*--- START OF ABOUT ---*/
 
 .dekdoi-about {
-    margin-top: 90px;
-    background-color: #a7d2cb;
+    margin-top: 70px;
+    background-color: #fccee0;
 }
 
 
@@ -140,7 +141,7 @@ section {
 /*--- START OF CONTACT ---*/
 
 .dekdoi-contact {
-    background-color: #f2d388;
+    background-color: #f3cefc;
 }
 
 
@@ -150,7 +151,7 @@ section {
 /*--- START OF RESUME ---*/
 
 .dekdoi-resume {
-    background-color: #c98575;
+    background-color: #fde6d0;
 }
 
 
@@ -160,7 +161,7 @@ section {
 /*--- START OF MEDIA ---*/
 
 .dekdoi-media {
-    background-color: white;
+    background-color: #d0fdfa;
     min-height: 90px;
 }
 
