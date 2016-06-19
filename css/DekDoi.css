@@ -43,63 +43,64 @@ When the window get resized:
 
 */
 
-nav {
+.dekdoi-nav {
     top: 0;
     width: 100%;
     min-height: 70px;
     display: block;
     position: fixed;
     background-color: white;
-    color: #777777;
-    font-weight: 600px;
-    font-family: 'Raleway', sans-serif;
     z-index: 1000;
     overflow: auto;
     border-bottom: 1px solid #d0d0d0;
-}
-
-.dekdoi-nav {}
-
-.nav-logo {}
-
-.dekdoi-nav h3 {
-    display: inline-block;
-   /* margin:inherit;
-    padding: inherit;*/
-}
-
-.dekdoi-nav ul {
-    list-style: none;
-    display: inline-block;
+    color: #777777;
+    font-weight: 600px;
+    font-family: 'Raleway', sans-serif;
     text-align: center;
-    /*margin: 0;
-    padding: 0;*/
 }
 
-.dekdoi-nav li {
-    list-style: none;
-    display: inline;
+.dekdoi-nav div {
+    display: inline-block;
+}
+
+.nav-logo {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    font-size: 20px;
+}
+
+.nav-menu {
+    position: absolute;
+    right: 10%;
+    top: 30%;
+}
+
+.nav-menu a {
+
 }
 
 .dekdoi-nav a {
-    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
     color: inherit;
     text-decoration: none;
     text-align: center;
-    padding: 1px 20px 5px 0px;
-    max-width: 100%;
+    padding: 20% 2px 20% 0px;
     font-size: 17px;
-    background-color: lightblue;
+    height: inherit;
 }
 
 .dekdoi-nav a:hover,
-.current-item a {
-    color: var(--greenMark);
-    background-color: #ddd;
+.current-item {
+    color: #23B68D;
+    background-color: #B6FCE8;
 }
 
 .toggle-nav {
     display: none;
+}
+
+.test-nav {
+    height: 100%;
 }
 
 
