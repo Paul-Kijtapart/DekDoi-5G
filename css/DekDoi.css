@@ -1,3 +1,16 @@
+/*--- GLOBAL VARIABLES ---*/
+
+:root {
+    --red: #b00;
+    --blue: #4679bd;
+    --grey: #ddd;
+    --lightBlack: #303030;
+    --greenMark: #66a992;
+    --white: #F0FFFF;
+    --sepLine: #d0d0d0;
+    --detail-size: 300px;
+}
+
 body {
     height: 100%;
     width: 100%;
@@ -19,20 +32,6 @@ body {
 
 .CENTER {
     margin: 0 auto;
-}
-
-
-/*--- GLOBAL VARIABLES ---*/
-
-:root {
-    --red: #b00;
-    --blue: #4679bd;
-    --grey: #ddd;
-    --lightBlack: #303030;
-    --greenMark: #66a992;
-    --white: #F0FFFF;
-    --sepLine: #d0d0d0;
-    --detail-size: 300px;
 }
 
 
@@ -61,20 +60,24 @@ nav {
 }
 
 .dekdoi-nav {
-    width: 100%;
-    position: fixed;
     top: 0;
-    min-height: 50px;
-    background-color: var(--lightBlack);
+    width: 100%;
+    min-height: 70px;
+    position: fixed;
+    background-color: white;
+    color: #777777;
+    font-weight: 600px;
+    font-family: 'Raleway', sans-serif;
     z-index: 1000;
-    border-bottom: 1px solid var(--sepLine);
-    color: var(--white);
+    border-bottom: 1px solid #d0d0d0;
 }
+
+.nav-logo {}
 
 .dekdoi-nav h3 {}
 
 .dekdoi-nav ul {
-    margin: 5px 0px 0px 5px;
+    padding-right: inherit;
     display: inline-block;
 }
 
@@ -89,6 +92,7 @@ nav {
 .dekdoi-nav a {
     text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
     color: inherit;
+    text-decoration: none;
 }
 
 .dekdoi-nav a:hover,
@@ -104,7 +108,7 @@ nav {
 /*--- END OF NAVIGATION PART ---*/
 
 
-/*--- MAIN CONTENT ---*/
+/*------ MAIN CONTENT ------*/
 
 
 /*@media screen and (max-width: 860px) {
@@ -114,10 +118,54 @@ nav {
     }
 }*/
 
-.dekdoi-content {
-    background-color: var(--grey);
-    min-height: 500px;
+section {
+    min-height: 400px;
+    width: inherit;
+    background-color: grey;
+    border-bottom: 2px solid black;
 }
 
 
-/*--- END OF MAIN CONTENT ---*/
+/*--- START OF ABOUT ---*/
+
+.dekdoi-about {
+    margin-top: 90px;
+    background-color: #a7d2cb;
+}
+
+
+/*--- END OF ABOUT ---*/
+
+
+/*--- START OF CONTACT ---*/
+
+.dekdoi-contact {
+    background-color: #f2d388;
+}
+
+
+/*--- END OF CONTACT ---*/
+
+
+/*--- START OF RESUME ---*/
+
+.dekdoi-resume {
+    background-color: #c98575;
+}
+
+
+/*--- END OF RESUME ---*/
+
+
+/*--- START OF MEDIA ---*/
+
+.dekdoi-media {
+    background-color: white;
+    min-height: 90px;
+}
+
+
+/*--- END OF MEDIA ---*/
+
+
+/*------ END OF MAIN CONTENT ------*/
