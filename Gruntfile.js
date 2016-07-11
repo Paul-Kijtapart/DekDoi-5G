@@ -5,6 +5,11 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
             // which files the task should operate:
+            options: {
+              globals: {
+                jQuery: true
+              },
+            },
             all: ['Gruntfile.js', 'js/*.js'],
         },
   });

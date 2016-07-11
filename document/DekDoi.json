@@ -1,7 +1,8 @@
 {
     "Trirutda": {
         "name": "Trirutda Nawattranakul",
-        "Work": [
+        "about": "I am a girl with a beautiful mother. My brother likes to call me fat-sister or dekdoi-5g. We live in a small happy house. I have a plan to be a writer. I wrote a short story about vampire.",
+        "experience": [
             {
                 "name": "Administrative Assistant",
                 "start": "December.2015",
@@ -30,20 +31,23 @@
                 "link": ""
             }
         ],
-        "Education": [
+        "educations": [
             {
+                "institute": "Vancouver Community College",
                 "name": "Administrative Assistant Certificate",
                 "start": "May.2015",
                 "end": "December.2015",
                 "location": "Vancouver Community College, Vancouver, BC"
             },
             {
+                "institute" : "Diversecity Community",
                 "name": "Customer Service and Cashier Training Certificate",
                 "start": "May.2012",
                 "end": "May.2012",
                 "location": "Diversecity Community, Surrey, BC"
             },
             {
+                "institute" : "Adult Education Centres",
                 "name": "Adult Graduation Diploma",
                 "start": "January.2012",
                 "end": "January.2012",
@@ -74,6 +78,7 @@
                     "Have basic knowledge of HTML"
                 ]
             }
-        ]
+        ],
+        "media": []
     }
 }
