@@ -115,7 +115,7 @@ section {
     margin: inherit;
     overflow: auto;
     line-height: inherit;
-    font-size: 14px;
+    font-size: 15px;
     color: #555555;
     /*border-bottom: 2px solid black;*/
 }
@@ -147,6 +147,14 @@ section .content {
 
 .dekdoi-experience {
     background-color: #f3cefc;
+}
+
+.dekdoi-experience li {
+    font-weight: bold;
+}
+
+.dekdoi-experience p, li{
+    font-size: 18px;
 }
 
 

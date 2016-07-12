@@ -5,7 +5,7 @@ $(function() {
     // Get Data from JSON file:
     $.ajax({
         url: 'document/DekDoi.json',
-        type: 'POST',
+        type: 'GET',
         dataType: "json",
         data: { param1: 'value1' },
         complete: function(xhr, textStatus) {
@@ -44,10 +44,25 @@ $(function() {
             var duration = exp.start + " to " + exp.end;
             var description = exp.description;
             var responsibilities = exp.responsibilities;
-
+            var responsibilitie = '';
+            for (var i in responsibilities) {
+                responsibilitie += '<li>' + responsibilities[i] + '</li>';
+            }
             
-            //TODO: Put them together. format exp_display to display on html
-            var exp_display = '';
+            // Put them together. format exp_display to display on html
+            var exp_display = '<div class="exp">' +
+            '<div class="col-1-12">'+
+            '</div>'+
+            '<div class="col-11-12">' +
+            '<h2>' + name + '</h2>' + 
+            '<p> DURATION: <strong>' + duration + '</strong>' + '</p>' +
+            '<p> DESCRIPTION: <strong>' + description + '</strong>' + '</p>' +
+            '<p> RESPONSIBILITIES: </p>' +
+            '<ul>' +
+            responsibilitie +
+            '</ul>' +
+            '</div>' + 
+            '</div>';
             $(exp_display).appendTo('#experience');
         }
     }
@@ -63,9 +78,12 @@ $(function() {
             var duration = education.start + " to " + education.end;
             var location = education.location;
 
-            // TODO: Put them together:
-            var education_display = '';
-
+            // Put them together:
+            var education_display = '<div class="col-1-3">' +
+            '<h3>'+ institute+'</h3>' + 
+            '<h3>'+ name +'</h3>' +
+            '<h4>'+ duration +'</h4>';
+            $(education_display).appendTo('#education');
         });
     }
 
