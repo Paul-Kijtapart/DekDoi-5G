@@ -170,6 +170,21 @@ section .content {
     min-height: 300px;
 }
 
+.dekdoi-contact form input, textarea{
+    display: block;
+    margin: 1% auto auto auto;
+    font-size: 100%;
+    width: 80%;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.dekdoi-contact form input[type="submit"] {
+   background-color: lightgreen;
+   border: none;
+   color: inherit;
+}
+
 .dekdoi-media {
     background-color: white;
     min-height: 100px;
