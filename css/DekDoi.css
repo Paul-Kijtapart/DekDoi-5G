@@ -23,7 +23,7 @@ body {
 /*--- GENERIC METHODS ----*/
 
 .CLEARFIX {
-    overflow: auto;
+    overflow: hidden;
 }
 
 
@@ -153,8 +153,27 @@ section .content {
     font-weight: bold;
 }
 
-.dekdoi-experience p, li{
+.dekdoi-experience p,
+li {
     font-size: 18px;
+}
+
+.exp {
+    display: inline-flex;
+    margin-bottom: 2%;
+}
+
+.timeline {
+    background-color: lightblue;
+    overflow: hidden;
+    height: 100%;
+    flex: 1;
+    max-width: 40px;
+    -webkit-flex: 1;
+    /* Safari 6.1+*/
+    -ms-flex: 1;
+    border-radius: 15px;
+    /*IE 10 */
 }
 
 
@@ -178,7 +197,8 @@ section .content {
     min-height: 300px;
 }
 
-.dekdoi-contact form input, textarea{
+.dekdoi-contact form input,
+textarea {
     display: block;
     margin: 1% auto auto auto;
     font-size: 100%;
@@ -188,9 +208,9 @@ section .content {
 }
 
 .dekdoi-contact form input[type="submit"] {
-   background-color: lightgreen;
-   border: none;
-   color: inherit;
+    background-color: lightgreen;
+    border: none;
+    color: inherit;
 }
 
 .dekdoi-media {

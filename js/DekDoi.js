@@ -52,8 +52,9 @@ $(function() {
             // Put them together. format exp_display to display on html
             var exp_display = '<div class="exp">' +
             '<div class="col-1-12">'+
+            '<div class="timeline"></div>' +
             '</div>'+
-            '<div class="col-11-12">' +
+            '<div class="col-11-12 exp-content">' +
             '<h2>' + name + '</h2>' + 
             '<p> DURATION: <strong>' + duration + '</strong>' + '</p>' +
             '<p> DESCRIPTION: <strong>' + description + '</strong>' + '</p>' +
