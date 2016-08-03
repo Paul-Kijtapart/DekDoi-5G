@@ -1,4 +1,4 @@
-$(function() {
+$(function() { // Wait for Document ready
 
     var name = "Trirutda";
 
@@ -10,7 +10,6 @@ $(function() {
         data: { param1: 'value1' },
         complete: function(xhr, textStatus) {
             //called when complete
-
         },
         success: function(data, textStatus, xhr) {
             //called when successful
@@ -48,29 +47,29 @@ $(function() {
             for (var i in responsibilities) {
                 responsibilitie += '<li>' + responsibilities[i] + '</li>';
             }
-            
+
             // Put them together. format exp_display to display on html
             var exp_display = '<div class="exp">' +
-            '<div class="col-1-12">'+
-            '<div class="timeline"></div>' +
-            '</div>'+
-            '<div class="col-11-12 exp-content">' +
-            '<h2>' + name + '</h2>' + 
-            '<p> DURATION: <strong>' + duration + '</strong>' + '</p>' +
-            '<p> DESCRIPTION: <strong>' + description + '</strong>' + '</p>' +
-            '<p> RESPONSIBILITIES: </p>' +
-            '<ul>' +
-            responsibilitie +
-            '</ul>' +
-            '</div>' + 
-            '</div>';
+                '<div class="col-1-12">' +
+                '<div class="timeline"></div>' +
+                '</div>' +
+                '<div class="col-11-12 exp-content">' +
+                '<h2>' + name + '</h2>' +
+                '<p> DURATION: <strong>' + duration + '</strong>' + '</p>' +
+                '<p> DESCRIPTION: <strong>' + description + '</strong>' + '</p>' +
+                '<p> RESPONSIBILITIES: </p>' +
+                '<ul>' +
+                responsibilitie +
+                '</ul>' +
+                '</div>' +
+                '</div>';
             $(exp_display).appendTo('#experience');
         }
     }
 
     function dekdoiEducation(person) {
         var educations = person.educations;
-        $.each(educations,function(index, value) {
+        $.each(educations, function(index, value) {
             var education = value;
 
             // Get required fields:
@@ -81,19 +80,36 @@ $(function() {
 
             // Put them together:
             var education_display = '<div class="col-1-3">' +
-            '<h3>'+ institute+'</h3>' + 
-            '<h3>'+ name +'</h3>' +
-            '<h4>'+ duration +'</h4>';
+                '<h3>' + institute + '</h3>' +
+                '<h3>' + name + '</h3>' +
+                '<h4>' + duration + '</h4>';
             $(education_display).appendTo('#education');
         });
     }
 
-    function dekdoiContact(person) {
-
+    function dekdoiContact() {
+        $('form').on('submit', function(event) {
+            event.preventDefault();
+            /* Act on the event */
+            $.ajax({
+                url: 'php/DekDoi-form.php',
+                type: 'POST',
+                data: $('form').serialize()
+            })
+            .done(function() {
+                console.log("success");
+            })
+            .fail(function() {
+                console.log("error contact");
+            })
+            .always(function() {
+                console.log("complete contact");
+            });
+        });
     }
 
     function dekdoiMedia(person) {
-
+        console.log("media run");
     }
 
 });

@@ -76,7 +76,7 @@ When the window get resized:
     color: inherit;
     text-decoration: none;
     text-align: center;
-    padding: 10% 2px 20% 0px;
+    padding: 15% 2px 20% 0px;
     font-size: 17px;
     height: inherit;
 }
@@ -216,6 +216,18 @@ textarea {
 .dekdoi-media {
     background-color: white;
     min-height: 100px;
+    text-align: center;
+    color: inherit;
+}
+
+.dekdoi-media .middle-content {
+    padding: 2%;
+}
+
+.dekdoi-media .middle-content a {
+    text-decoration: none;
+    color: black;
+
 }
 
 
