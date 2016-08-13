@@ -29,10 +29,12 @@ if (!$flag) {
 /* Check if name only contains letters and whitespaces */
 function checkName($value='')
 {
+	global $flag;
 	$value = init($value);
 	$pattern = '/^[A-Za-z\s]*$/';
 	if (!preg_match($pattern, $value)){
 		$nameError = "Name is not valid.";
+		$flag = false;
 		echo $nameError;
 	}
 	return $value;
@@ -41,21 +43,25 @@ function checkName($value='')
 /* Check if the value is a valid email address */
 function checkEmail($value='')
 {
+	global $flag;
 	$value = init($value);
 	if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
 		$emailError = "Email is not valid";
+		$flag = false;
 		echo $emailError;
 	}
 	return $value;
 }
 
-/* Check if the value contains only the number */
+/* Check if the value contains only the number and -, ., :, + signs*/
 function checkPhone($value='')
 {
+	global $flag;
 	$value = init($value);
 	$pattern = '/(\+)?[\d]*\d{3}([\.\-\:])?\d{3}\2\d{4}/';
 	if (!preg_match($pattern, $value)) {
 		$phoneError = "Phone is not valid.";
+		$flag = false;
 		echo $phoneError;
 	}
 	return $value;
@@ -64,14 +70,10 @@ function checkPhone($value='')
 function checkMessage($value='')
 {
 	$value = init($value);
-	// $pattern = '[^a-zA-Z0-9\s\-\.\,\:\;\_\?\*\$\(\)]';
-	// if (preg_match($pattern, $value)) {
-	// 	$messageError = "Message contains inappropriate data. Please try again.";
-	// 	echo $messageError;
-	// }
 	return $value;
 }
 
+/* Convert User's input into readable format */
 function init($data) {
 	$data = stripslashes($data);
 	$data = htmlspecialchars($data);
@@ -79,10 +81,11 @@ function init($data) {
 }
 
 /* Printing */
-var_dump($clientName);
-var_dump($clientEmail);
-var_dump($clientPhone);
-var_dump($clientMessage);
+// var_dump($clientName);
+// var_dump($clientEmail);
+// var_dump($clientPhone);
+// var_dump($clientMessage);
+// var_dump($flag);
 
 /* Send Thank you Email 
 Each line should be separated with a CRLF (\r\n). 
@@ -99,8 +102,6 @@ $emailToOwner .= $clientName . " would like to contact you about " . $clientMess
 $emailToOwner .= "His phone number is " . $clientPhone . " and his email is " . $clientEmail . "\r\n";
 
 /* Send Emails */
-//$thankyouStatus = mail($clientEmail, $topic, $thankyouEmail);
-//$ownerStatus = mail($email, $topic, $emailToOwner);
-
-
+$thankyouStatus = mail($clientEmail, $topic, $thankyouEmail);
+$ownerStatus = mail($email, $topic, $emailToOwner);
  ?>
