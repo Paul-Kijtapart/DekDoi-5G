@@ -19,16 +19,15 @@
         <!-- Right nav -->
         <!--  <a href="#" class="test-nav"> I don't get this</a> -->
         <div class="nav-menu">
-            <a class="current-item" href="#about"> About </a>
+            <a class="currentItem" href="#about"> About </a>
             <a href="#contact"> Contact  </a>
             <a href="#projects"> Projects </a>
-            <a href="#resume"> Resume </a>
+            <a href="#media"> Resume </a>
         </div>
     </nav>
     <!-- END OF NAVIGATION PART -->
     <!-- ABOUT -->
     <section id="about" class="dekdoi-about">
-        <button id="testMagic"> TEST SCROLL MAGIC </button>
         <div class="content grid grid-pad">
             <div class="col-1-1">
                 <h2 class="dekdoi-title"> About </h2>
@@ -69,9 +68,9 @@
     </section>
     <!-- END OF PROJECT -->
     <!-- START OF education -->
-    <section class="dekdoi-education">
+    <section id="education" class="dekdoi-education">
         <div class="content grid grid-pad">
-            <div class="col-1-1" id="education">
+            <div class="col-1-1" id="educationContent">
                 <h2 class="dekdoi-title"> Education </h2>
             </div>
             <!-- TODO: Making a slidable bar (display 3 education at a time) -->
@@ -90,17 +89,26 @@
             <div class="col-1-1">
                 <h2 class="dekdoi-title"> Contact </h2>
             </div>
-            <form id="contact-form" action="php/DekDoi-form.php" method="post" target="_blank">
-                <input type="text" name="name" placeholder="Name" value="hime"></input>
-                <input type="email" name="email" placeholder="Email Address" value="test@test.com"></input>
-                <input type="tel" name="phone" placeholder="Phone Number" value="123456"></input>
-                <textarea name="comment" rows="4" cols="50" maxlength="200" placeholder="Please comment here." value="yay"> </textarea>
-                <input type="submit" value="Submit"></input>
+            <form id="contactForm" action="php/DekDoi-form.php" method="post" target="_blank">
+                <div class="col-1-1">
+                    <input type="text" name="name" placeholder="Name" minlength="2" maxlength="30" required/>
+                    <label></label>
+                </div>
+                <div class="col-1-1">
+                    <input type="email" name="email" placeholder="Email Address" minlength="2" maxlength="30" required/>
+                    <label></label>
+                </div>
+                <div class="col-1-1">
+                    <input type="tel" name="phone" placeholder="Phone Number" minlength="5" maxlength="30" required/>
+                    <label></label>
+                </div>
+                <textarea name="comment" rows="4" cols="50" maxlength="200" placeholder="Please comment here. (required)"> </textarea>
+                <input type="submit" value="Submit" />
             </form>
         </div>
         </div>
     </section>
-    <section id="resume" class="dekdoi-media">
+    <section id="media" class="dekdoi-media">
         <div class="middle-content">
             <a href="" class="fa fa-print fa-2x" target="_blank"> Download Resume </a>
         </div>
@@ -110,6 +118,7 @@
     <script type="text/javascript" src="js/tempt/TweenMax.js"></script>
     <script src="https://use.fontawesome.com/54ba3cfa99.js"></script>
     <script type="text/javascript" src="js/tempt/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.validate.js"></script>
     <script type="text/javascript" src="js/tempt/ScrollMagic.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
     <script type="text/javascript" src="js/plugins/animation.gsap.js"></script>

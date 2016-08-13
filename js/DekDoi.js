@@ -83,28 +83,38 @@ $(function() { // Wait for Document ready
                 '<h3>' + institute + '</h3>' +
                 '<h3>' + name + '</h3>' +
                 '<h4>' + duration + '</h4>';
-            $(education_display).appendTo('#education');
+            $(education_display).appendTo('#educationContent');
         });
     }
 
     function dekdoiContact() {
-        $('form').on('submit', function(event) {
+        $('form[id="contactForm"]').on('submit', function(event) {
             event.preventDefault();
-            /* Act on the event */
+            /* Validate the input first */
+            var form = $('form[id="contactForm"]');
+            form.validate();
+
+            /* Check if form is valid() */
+            if (!form.valid()) {
+                console.log("Form is not valid. Please try again!");
+                return;
+            }
+
+            /* Pass onto php */
             $.ajax({
-                url: 'php/DekDoi-form.php',
-                type: 'POST',
-                data: $('form').serialize()
-            })
-            .done(function() {
-                console.log("success");
-            })
-            .fail(function() {
-                console.log("error contact");
-            })
-            .always(function() {
-                console.log("complete contact");
-            });
+                    url: 'php/DekDoi-form.php',
+                    type: 'POST',
+                    data: $('form').serialize()
+                })
+                .done(function() {
+                    console.log("success contact");
+                })
+                .fail(function() {
+                    console.log("error contact");
+                })
+                .always(function() {
+                    console.log("complete contact");
+                });
         });
     }
 

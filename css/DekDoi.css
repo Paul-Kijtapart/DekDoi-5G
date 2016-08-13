@@ -82,7 +82,7 @@ When the window get resized:
 }
 
 .dekdoi-nav a:hover,
-.current-item {
+.currentItem {
     color: #23B68D;
     background-color: #B6FCE8;
 }
@@ -199,10 +199,10 @@ li {
 
 .dekdoi-contact form input,
 textarea {
-    display: block;
-    margin: 1% auto auto auto;
+    display: inline;
+    margin: 0 auto;
     font-size: 100%;
-    width: 80%;
+    width: 70%;
     text-align: center;
     border: 1px solid rgba(0, 0, 0, .2);
 }
@@ -211,6 +211,15 @@ textarea {
     background-color: lightgreen;
     border: none;
     color: inherit;
+}
+
+.dekdoi-contact form > div {
+    margin-bottom: 1%;
+}
+
+.dekdoi-contact form div > label {
+    display: inline;
+    /*display: none;*/
 }
 
 .dekdoi-media {
