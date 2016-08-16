@@ -34,6 +34,7 @@
         "educations": [
             {
                 "institute": "Vancouver Community College",
+                "icon": "",
                 "name": "Administrative Assistant Certificate",
                 "start": "May.2015",
                 "end": "December.2015",
@@ -41,6 +42,7 @@
             },
             {
                 "institute" : "Diversecity Community",
+                "icon": "",
                 "name": "Customer Service and Cashier Training Certificate",
                 "start": "May.2012",
                 "end": "May.2012",
@@ -48,6 +50,7 @@
             },
             {
                 "institute" : "Adult Education Centres",
+                "icon": "",
                 "name": "Adult Graduation Diploma",
                 "start": "January.2012",
                 "end": "January.2012",
