@@ -54,9 +54,20 @@ $(function() { // Wait for Document ready
 
 
     /* Experience */
+    var projectsScene = new ScrollMagic.Scene({ // Start of Project Scene 
+            triggerElement: "#projects",
+            reverse: false
+        })
+        .addIndicators(); // add indicators (requires plugin)
     function dekdoiExperience(person) {
         $('#projectTitle').text("Experience");
         var exps = person.experience;
+
+        /* Animation on Enter Project Section */
+        var projectTitle = $('#projectTitle');
+        var projectTween = new TimelineLite();
+        projectTween.from(projectTitle, 3, { left: '70%', opacity: 0 });
+        projectsScene.setTween(projectTween);
 
         for (var ind in exps) {
             var exp = exps[ind];
@@ -74,9 +85,9 @@ $(function() { // Wait for Document ready
             // Put them together. format exp_display to display on html
             var exp_display = '<div id="exp' + ind + '" class="exp">' +
                 '<div class="col-1-12">' +
-                '<div class="timeline"></div>' +
+                '<div id="timeline' + ind + '" class="timeline"></div>' +
                 '</div>' +
-                '<div class="col-11-12">' +
+                '<div id="expDetail' + ind + '" class="col-11-12">' +
                 '<h2>' + name + '</h2>' +
                 '<p> DURATION: <strong>' + duration + '</strong>' + '</p>' +
                 '<p> DESCRIPTION: <strong>' + description + '</strong>' + '</p>' +
@@ -89,27 +100,22 @@ $(function() { // Wait for Document ready
             $(exp_display).appendTo('#experience');
 
             /* Apply exp scene */
+            var currentTimeline = $('#timeline' + ind);
+            var currentDetail = $('#expDetail' + ind);
+            var expTween = new TimelineLite();
+            var timelineTween = TweenLite.from(currentTimeline, 2, { height: 0 });
+            var detailTween = TweenLite.from(currentDetail, 2, { opacity: 0 });
+            expTween.add(timelineTween);
+            expTween.add(detailTween);
             var expScene = new ScrollMagic.Scene({
                     triggerElement: "#exp" + ind,
                     reverse: false
                 })
+                .setTween(expTween)
                 .addIndicators({ name: "exp" + ind })
                 .addTo(mainController);
         }
     }
-
-     // Start of Project Scene 
-    var projectTitle = $('#projectTitle');
-    var projectTween = new TimelineLite();
-    projectTween.from(projectTitle, 3, { left: '70%', opacity: 0 });
-    var projectsScene = new ScrollMagic.Scene({
-            triggerElement: "#projects",
-            reverse: false
-        })
-        .setTween(projectTween)
-        .addIndicators(); // add indicators (requires plugin)
-
-    // End Of Project Scene
 
     /* Education */
     function dekdoiEducation(person) {
@@ -132,7 +138,7 @@ $(function() { // Wait for Document ready
             $(education_display).appendTo('#educationContent');
         });
     }
-     // Start of Education Scene 
+    // Start of Education Scene 
     var educationScene = new ScrollMagic.Scene({
             triggerElement: "#education",
             reverse: false
@@ -172,7 +178,7 @@ $(function() { // Wait for Document ready
                 });
         });
     }
-     // Start of Contact Scene 
+    // Start of Contact Scene 
     var contactLogoTween = TweenMax.to($("#contactIcons a"), 1, { 'font-size': '50' });
     var contactScene = new ScrollMagic.Scene({
             triggerElement: "#contact"
