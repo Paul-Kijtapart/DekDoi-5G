@@ -28,11 +28,12 @@ $(function() { // Wait for Document ready
     });
 
     function dekdoiAbout(person) {
+        $('#aboutTitle').text("Hi, I see you found my little corner on the internet.");
         $('.dekdoi-about h3').text(person.about);
     }
 
     function dekdoiExperience(person) {
-        //console.log(person);
+        $('#projectTitle').text("Experience");
         var exps = person.experience;
         var ind;
         for (ind in exps) {
@@ -68,6 +69,7 @@ $(function() { // Wait for Document ready
     }
 
     function dekdoiEducation(person) {
+        $('educationTitle').text('Education');
         var educations = person.educations;
         $.each(educations, function(index, value) {
             var education = value;
@@ -88,6 +90,7 @@ $(function() { // Wait for Document ready
     }
 
     function dekdoiContact() {
+        $('#contactTitle').text('Contact');
         $('form[id="contactForm"]').on('submit', function(event) {
             event.preventDefault();
             /* Validate the input first */

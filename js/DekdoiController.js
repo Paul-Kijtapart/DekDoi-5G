@@ -31,6 +31,7 @@ $(function() { // Wait for Document ready
         }
     });
 
+
     /* Re-assign the focus class to the new one */
     function reFocusNav(obj) {
         var prev = $("a[class='currentItem'");
@@ -38,31 +39,45 @@ $(function() { // Wait for Document ready
         obj.addClass('currentItem');
     }
 
-    /* Apply Class Toggle as user scrolls down */
+    /* Apply Animations to each section */
+    /* Start Of About Scene */
+    var aboutTitle = $('#aboutTitle');
+    var aboutTween = new TimelineLite();
+    aboutTween.from(aboutTitle, 9, { left: '70%', opacity: 0 });
     var aboutScene = new ScrollMagic.Scene({
-            triggerElement: "#about"
+            triggerElement: "#about",
+            reverse: false
         })
+        .setTween(aboutTween)
         .addIndicators(); // add indicators (requires plugin)
-
+    /* End of About Scene */
+    /* Start of Project Scene */
     var projectsScene = new ScrollMagic.Scene({
             triggerElement: "#projects"
         })
         .addIndicators(); // add indicators (requires plugin)
-
+    /* End Of Project Scene */
+    // Start of Education Scene
     var educationScene = new ScrollMagic.Scene({
-            triggerElement: "#education"
+            triggerElement: "#education",
+            reverse: false
         })
         .addIndicators(); // add indicators (requires plugin)
-
+    /* End Of Education Scene */
+    /* Start of Contact Scene */
+    var contactLogoTween = TweenMax.to($("#contactIcons a"), 1, { 'font-size': '50' });
     var contactScene = new ScrollMagic.Scene({
             triggerElement: "#contact"
         })
-        .addIndicators(); // add indicators (requires plugin)
-
+        .setTween(contactLogoTween)
+        .addIndicators({ name: "contact (duration: 1)" }); // add indicators (requires plugin)
+    /* End Of Contact Scene */
+    /* Start of Media Scene */
     var mediaScene = new ScrollMagic.Scene({
             triggerElement: "#media"
         })
         .addIndicators(); // add indicators (requires plugin)
+    /* End Of Media Scene */
 
     /* Add Scenes to ScrollMagic Controller */
     mainController.addScene([

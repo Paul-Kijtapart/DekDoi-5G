@@ -30,7 +30,7 @@
     <section id="about" class="dekdoi-about">
         <div class="content grid grid-pad">
             <div class="col-1-1">
-                <h2 class="dekdoi-title"> About </h2>
+                <h2 id="aboutTitle" class="dekdoiTitle"></h2>
             </div>
             <div class="col-1-3">
             </div>
@@ -44,7 +44,7 @@
     <section id="projects" class="dekdoi-experience">
         <div class="content grid grid-pad">
             <div class="col-1-1" id="experience">
-                <h2 class="dekdoi-title"> Experience </h2>
+                <h2 id="projectTitle" class="dekdoiTitle"></h2>
             </div>
             <!-- TODO: Create a list of experiences. -->
             <!-- <div class="exp">
@@ -71,7 +71,7 @@
     <section id="education" class="dekdoi-education">
         <div class="content grid grid-pad">
             <div class="col-1-1" id="educationContent">
-                <h2 class="dekdoi-title"> Education </h2>
+                <h2 id="educationTitle" class="dekdoiTitle"> Education </h2>
             </div>
             <!-- TODO: Making a slidable bar (display 3 education at a time) -->
             <!--  <div class="col-1-3">
@@ -87,7 +87,7 @@
     <section id="contact" class="dekdoi-contact">
         <div class="content grid grid-pad">
             <div class="col-1-1">
-                <h2 class="dekdoi-title"> Contact </h2>
+                <h2 id="contactTitle" class="dekdoiTitle"></h2>
             </div>
             <form id="contactForm" action="php/DekDoi-form.php" method="post" target="_blank" class="col-8-12">
                 <div class="col-1-1">
@@ -105,8 +105,9 @@
                 <textarea name="comment" rows="4" cols="50" maxlength="200" placeholder="Please comment here. (required)"> </textarea>
                 <input type="submit" value="Submit" />
             </form>
-            <div class="col-4-12">
-            <i class="fa fa-youtube" aria-hidden="true"></i>
+            <div id="contactIcons" class="col-4-12">
+                <a href="" class="fa fa-youtube" aria-hidden="true" target="_blank"></a>
+                <a href="" class="fa fa-linkedin" aria-hidden="true" target="_blank"></a>
             </div>
         </div>
         </div>
