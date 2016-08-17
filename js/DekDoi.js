@@ -1,6 +1,10 @@
 $(function() { // Wait for Document ready
 
+    /* Main Controller For ScrollTO elements */
+    var mainController = new ScrollMagic.Controller();
+
     var name = "Trirutda";
+
 
     // Get Data from JSON file:
     $.ajax({
@@ -27,16 +31,34 @@ $(function() { // Wait for Document ready
         }
     });
 
+    /* ABOUT */
     function dekdoiAbout(person) {
         $('#aboutTitle').text("Hi, I see you found my little corner on the internet.");
-        $('.dekdoi-about h3').text(person.about);
+        var description = $('.dekdoi-about h3');
+        description.text(person.about);
     }
 
+    /* Start Of About Scene */
+    var aboutTitle = $('#aboutTitle');
+    var aboutDescription = $('.dekdoi-about h3');
+    var aboutTween = new TimelineLite();
+    aboutTween.from(aboutTitle, 3, { left: '70%', opacity: 0 });
+    aboutTween.from(aboutDescription, 2, { y: 200, opacity: 0 });
+    var aboutScene = new ScrollMagic.Scene({
+            triggerElement: "#about",
+            reverse: false
+        })
+        .setTween(aboutTween)
+        .addIndicators(); // add indicators (requires plugin)
+    /* End of About Scene */
+
+
+    /* Experience */
     function dekdoiExperience(person) {
         $('#projectTitle').text("Experience");
         var exps = person.experience;
-        var ind;
-        for (ind in exps) {
+
+        for (var ind in exps) {
             var exp = exps[ind];
 
             // Get required fields
@@ -50,11 +72,11 @@ $(function() { // Wait for Document ready
             }
 
             // Put them together. format exp_display to display on html
-            var exp_display = '<div class="exp">' +
+            var exp_display = '<div id="exp' + ind + '" class="exp">' +
                 '<div class="col-1-12">' +
                 '<div class="timeline"></div>' +
                 '</div>' +
-                '<div class="col-11-12 exp-content">' +
+                '<div class="col-11-12">' +
                 '<h2>' + name + '</h2>' +
                 '<p> DURATION: <strong>' + duration + '</strong>' + '</p>' +
                 '<p> DESCRIPTION: <strong>' + description + '</strong>' + '</p>' +
@@ -65,9 +87,31 @@ $(function() { // Wait for Document ready
                 '</div>' +
                 '</div>';
             $(exp_display).appendTo('#experience');
+
+            /* Apply exp scene */
+            var expScene = new ScrollMagic.Scene({
+                    triggerElement: "#exp" + ind,
+                    reverse: false
+                })
+                .addIndicators({ name: "exp" + ind })
+                .addTo(mainController);
         }
     }
 
+     // Start of Project Scene 
+    var projectTitle = $('#projectTitle');
+    var projectTween = new TimelineLite();
+    projectTween.from(projectTitle, 3, { left: '70%', opacity: 0 });
+    var projectsScene = new ScrollMagic.Scene({
+            triggerElement: "#projects",
+            reverse: false
+        })
+        .setTween(projectTween)
+        .addIndicators(); // add indicators (requires plugin)
+
+    // End Of Project Scene
+
+    /* Education */
     function dekdoiEducation(person) {
         $('educationTitle').text('Education');
         var educations = person.educations;
@@ -88,7 +132,15 @@ $(function() { // Wait for Document ready
             $(education_display).appendTo('#educationContent');
         });
     }
+     // Start of Education Scene 
+    var educationScene = new ScrollMagic.Scene({
+            triggerElement: "#education",
+            reverse: false
+        })
+        .addIndicators(); // add indicators (requires plugin)
+    // End Of Education Scene 
 
+    /* Contract */
     function dekdoiContact() {
         $('#contactTitle').text('Contact');
         $('form[id="contactForm"]').on('submit', function(event) {
@@ -120,9 +172,70 @@ $(function() { // Wait for Document ready
                 });
         });
     }
+     // Start of Contact Scene 
+    var contactLogoTween = TweenMax.to($("#contactIcons a"), 1, { 'font-size': '50' });
+    var contactScene = new ScrollMagic.Scene({
+            triggerElement: "#contact"
+        })
+        .setTween(contactLogoTween)
+        .addIndicators({ name: "contact (duration: 1)" }); // add indicators (requires plugin)
+    // End Of Contact Scene 
 
+
+    /* Resume and Media section */
     function dekdoiMedia(person) {
         console.log("media run");
     }
+    // Start of Media Scene
+    var mediaScene = new ScrollMagic.Scene({
+            triggerElement: "#media"
+        })
+        .addIndicators(); // add indicators (requires plugin)
+    // End Of Media Scene 
+
+    /* SetUP ScrollTO elements */
+    mainController.scrollTo(function(target) {
+        TweenMax.to(window, 1.5, {
+            scrollTo: {
+                y: target, // scroll position of the target along y axis
+                offsetY: 70,
+                autoKill: true // allows user to kill scroll action smoothly
+            },
+            ease: Cubic.easeInOut
+        });
+    });
+    $("a[href^='#']").on({
+        click: function(e) {
+            e.preventDefault();
+            var id = $(this).attr("href"); // grab the href attribute value
+            if ($(id).length > 0) {
+                // prevents default behavior of links.
+                e.preventDefault();
+
+                // trigger scroll
+                mainController.scrollTo(id);
+            }
+
+            /* Re-color */
+            reFocusNav($(this));
+        }
+    });
+
+    /* Re-assign the focus class to the new one */
+    function reFocusNav(obj) {
+        var prev = $("a[class='currentItem'");
+        prev.removeClass('currentItem');
+        obj.addClass('currentItem');
+    }
+
+    /* Add Scenes to ScrollMagic Controller */
+    mainController.addScene([
+        aboutScene,
+        projectsScene,
+        educationScene,
+        contactScene,
+        mediaScene
+    ]);
+
 
 });
