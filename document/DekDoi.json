@@ -1,5 +1,6 @@
 {
     "Trirutda": {
+        "image": "images/oilProfilePic.png",
         "name": "Trirutda Nawattranakul",
         "about": "My name is Trirutda Nawattranakul, a coordinator Assistant and an experienced chef. After getting both culinary certificate and administrative assistant certificate from Vancouver Community College, I have been developing my knowledge on Office tools and data analysis. I am currently looking for a full-time administrator assistant.",
         "experience": [
@@ -34,14 +35,14 @@
         "educations": [
             {
                 "institute": "Vancouver Community College",
-                "icon": "",
+                "icon": "images/vccLogo.png",
                 "name": "Administrative Assistant Certificate",
                 "start": "May.2015",
                 "end": "December.2015",
                 "location": "Vancouver Community College, Vancouver, BC"
             },
             {
-                "institute" : "Diversecity Community",
+                "institute": "Diversecity Community",
                 "icon": "",
                 "name": "Customer Service and Cashier Training Certificate",
                 "start": "May.2012",
@@ -49,7 +50,7 @@
                 "location": "Diversecity Community, Surrey, BC"
             },
             {
-                "institute" : "Adult Education Centres",
+                "institute": "Adult Education Centres",
                 "icon": "",
                 "name": "Adult Graduation Diploma",
                 "start": "January.2012",

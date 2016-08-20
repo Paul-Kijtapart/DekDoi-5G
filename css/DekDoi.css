@@ -77,7 +77,7 @@ When the window get resized:
     text-decoration: none;
     text-align: center;
     padding: 15% 2px 20% 0px;
-    font-size: 17px;
+    font-size: inherit;
     height: inherit;
 }
 
@@ -139,6 +139,14 @@ section .content {
     background-color: #fccee0;
 }
 
+.dekdoi-about img {
+    overflow: hidden;
+    width: 250px;
+    height: 250px;
+    border-radius: 5%;
+    max-width: 50%;
+    margin: 0 25%;
+}
 
 /*--- END OF ABOUT ---*/
 

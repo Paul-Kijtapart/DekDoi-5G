@@ -31,33 +31,39 @@ $(function() { // Wait for Document ready
     });
 
     /* ABOUT */
-    function dekdoiAbout(person) {
-        $('#aboutTitle').text("About");
-        var description = $('.dekdoi-about h3');
-        description.text(person.about);
-    }
-
     /* Start Of About Scene */
     var aboutTitle = $('#aboutTitle');
     var aboutDescription = $('.dekdoi-about h3');
     var aboutTween = new TimelineLite();
     aboutTween.from(aboutTitle, 3, { left: '70%', opacity: 0 });
-    aboutTween.from(aboutDescription, 4, { y: 200, opacity: 0 });
+
+    function dekdoiAbout(person) {
+        $('#aboutTitle').text("About");
+        var description = $('.dekdoi-about h3');
+        description.text(person.about);
+
+        var profilePic = '<img src="' + person.image + '" >';
+        $(profilePic).appendTo("#profilePic");
+
+
+        aboutTween.from($("#profilePic img"), 0.5, { scale: 0.5, autoAlpha: 0 }, "+=0.5");
+        aboutTween.from(aboutDescription, 4, { y: 200, opacity: 0 });
+    }
     var aboutScene = new ScrollMagic.Scene({
             triggerElement: "#about",
             reverse: false
         })
-        .setTween(aboutTween)
-        .addIndicators(); // add indicators (requires plugin)
+        .setTween(aboutTween);
+    // .addIndicators();
     /* End of About Scene */
 
 
     /* Experience */
     var projectsScene = new ScrollMagic.Scene({ // Start of Project Scene 
-            triggerElement: "#projects",
-            reverse: false
-        })
-        .addIndicators(); // add indicators (requires plugin)
+        triggerElement: "#projects",
+        reverse: false
+    });
+    // .addIndicators(); 
     function dekdoiExperience(person) {
         $('#projectTitle').text("Experience");
         var exps = person.experience;
@@ -111,18 +117,18 @@ $(function() { // Wait for Document ready
                     reverse: false
                 })
                 .setTween(expTween)
-                .addIndicators({ name: "exp" + ind })
                 .addTo(mainController);
+            // .addIndicators({ name: "exp" + ind })
         }
     }
 
     /* Education */
     // Start of Education Scene
     var educationScene = new ScrollMagic.Scene({
-            triggerElement: "#education",
-            reverse: false
-        })
-        .addIndicators(); // add indicators (requires plugin)
+        triggerElement: "#education",
+        reverse: false
+    });
+    // .addIndicators();
     // End Of Education Scene 
     function dekdoiEducation(person) {
         var educationTitle = $('#educationTitle');
@@ -192,8 +198,8 @@ $(function() { // Wait for Document ready
             triggerElement: "#contact",
             reverse: false
         })
-        .setTween(contactTween)
-        .addIndicators({ name: "contact (duration: 1)" }); // add indicators (requires plugin)
+        .setTween(contactTween);
+    // .addIndicators({ name: "contact (duration: 1)" });
     // End Of Contact Scene 
 
 
@@ -203,9 +209,9 @@ $(function() { // Wait for Document ready
     }
     // Start of Media Scene
     var mediaScene = new ScrollMagic.Scene({
-            triggerElement: "#media"
-        })
-        .addIndicators(); // add indicators (requires plugin)
+        triggerElement: "#media"
+    });
+    // .addIndicators();
     // End Of Media Scene 
 
     /* SetUP ScrollTO elements */
