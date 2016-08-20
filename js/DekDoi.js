@@ -209,7 +209,7 @@ $(function() { // Wait for Document ready
     // Put it together 
     contactTween.insert(contactTitleTween);
     contactTween.insert(contactLogoTween);
-    contactTween.insert(mediaTween);
+    contactTween.add(mediaTween);
 
     var contactScene = new ScrollMagic.Scene({
             triggerElement: "#contact",
