@@ -10,5 +10,5 @@ Programming languages used:
 - Javascript, JQuery, CSS, HTML
 
 Grunt used:
-- Grunt, Jshint, uglify
+- Jshint, uglify
 
