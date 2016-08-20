@@ -238,23 +238,27 @@ textarea {
     display: block;
     text-decoration: none;
     color: inherit;
+    position: relative;
 }
 
-.dekdoi-media {
-    background-color: white;
+.dekdoiMedia {
+    background-color: #2e2e2e;
     min-height: 100px;
     text-align: center;
     color: inherit;
+    font-size: inherit;
 }
 
-.dekdoi-media .middle-content {
+.dekdoiMedia #mediaContent {
     padding: 2%;
+    position: relative;
 }
 
-.dekdoi-media .middle-content a {
+.dekdoiMedia #mediaContent a {
     text-decoration: none;
-    color: black;
-
+    color: white;
+    border: 1px solid white;
+    padding: 1% 1%;
 }
 
 

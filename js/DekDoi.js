@@ -108,7 +108,7 @@ $(function() { // Wait for Document ready
             var currentTimeline = $('#timeline' + ind);
             var currentDetail = $('#expDetail' + ind);
             var expTween = new TimelineLite();
-            var timelineTween = TweenLite.from(currentTimeline, 2, { height: 0 });
+            var timelineTween = TweenLite.from(currentTimeline, 2, { backgroundColor: "blue", height: 0 });
             var detailTween = TweenLite.from(currentDetail, 2, { opacity: 0 });
             expTween.insert(timelineTween);
             expTween.insert(detailTween);
@@ -188,12 +188,29 @@ $(function() { // Wait for Document ready
                 });
         });
     }
+
+    // contactLogoTween.add(TweenLite.to($("#contactIcons a"), 1, { left: '5%' }, "+=0.5"));
+
     // Start of Contact Scene 
     var contactTween = new TimelineLite();
     var contactTitleTween = TweenLite.from($("#contactTitle"), 3, { left: '70%', opacity: 0 });
-    var contactLogoTween = TweenLite.to($("#contactIcons a"), 1, { 'font-size': '50' });
+    var contactLogoTween = new TimelineLite();
+    contactLogoTween.add(TweenLite.to($("#contactIcons a"), 1, { left: '50%', margin: '10px' }, "+=0.5"));
+    contactLogoTween.add(TweenLite.to($("#contactIcons a"), 1, { 'font-size': '50' }));
+
+    // Media Animation
+    var mediaTween = new TimelineLite();
+    mediaTween.add(function() {
+        getSkewAnimation($("#mediaContent"));
+    });
+    mediaTween.to($("#media"), 1, { backgroundColor: "white", delay : 1.5 }, "after");
+    mediaTween.to($("#mediaContent a"), 1, { color: "black", "border-color": "black" }, "after");
+
+    // Put it together 
     contactTween.insert(contactTitleTween);
     contactTween.insert(contactLogoTween);
+    contactTween.insert(mediaTween);
+
     var contactScene = new ScrollMagic.Scene({
             triggerElement: "#contact",
             reverse: false
@@ -209,9 +226,18 @@ $(function() { // Wait for Document ready
     }
     // Start of Media Scene
     var mediaScene = new ScrollMagic.Scene({
-        triggerElement: "#media"
+        triggerElement: "#media",
+        reverse: false
     });
-    // .addIndicators();
+
+    function getSkewAnimation(skew) {
+        var skewTimeline = new TimelineLite();
+        skewTimeline.to(skew, 0.5, { skewX: 45 })
+            .to(skew, 0.8, { skewX: -45 })
+            .to(skew, 0.5, { skewX: 0, skewY: 0 });
+        return skewTimeline;
+    }
+
     // End Of Media Scene 
 
     /* SetUP ScrollTO elements */
