@@ -80,13 +80,6 @@ function init($data) {
 	return $data;
 }
 
-/* Printing */
-// var_dump($clientName);
-// var_dump($clientEmail);
-// var_dump($clientPhone);
-// var_dump($clientMessage);
-// var_dump($flag);
-
 /* Send Thank you Email 
 Each line should be separated with a CRLF (\r\n). 
 Lines should not be larger than 70 characters.

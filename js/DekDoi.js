@@ -54,7 +54,6 @@ $(function() { // Wait for Document ready
             reverse: false
         })
         .setTween(aboutTween);
-    // .addIndicators();
     /* End of About Scene */
 
 
@@ -63,7 +62,6 @@ $(function() { // Wait for Document ready
         triggerElement: "#projects",
         reverse: false
     });
-    // .addIndicators(); 
     function dekdoiExperience(person) {
         $('#projectTitle').text("Experience");
         var exps = person.experience;
@@ -118,7 +116,6 @@ $(function() { // Wait for Document ready
                 })
                 .setTween(expTween)
                 .addTo(mainController);
-            // .addIndicators({ name: "exp" + ind })
         }
     }
 
@@ -128,7 +125,6 @@ $(function() { // Wait for Document ready
         triggerElement: "#education",
         reverse: false
     });
-    // .addIndicators();
     // End Of Education Scene 
     function dekdoiEducation(person) {
         var educationTitle = $('#educationTitle');
@@ -216,7 +212,6 @@ $(function() { // Wait for Document ready
             reverse: false
         })
         .setTween(contactTween);
-    // .addIndicators({ name: "contact (duration: 1)" });
     // End Of Contact Scene 
 
 
@@ -229,14 +224,6 @@ $(function() { // Wait for Document ready
         triggerElement: "#media",
         reverse: false
     });
-
-    function getSkewAnimation(skew) {
-        var skewTimeline = new TimelineLite();
-        skewTimeline.to(skew, 0.5, { skewX: 45 })
-            .to(skew, 0.8, { skewX: -45 })
-            .to(skew, 0.5, { skewX: 0, skewY: 0 });
-        return skewTimeline;
-    }
 
     // End Of Media Scene 
 
@@ -283,6 +270,15 @@ $(function() { // Wait for Document ready
         contactScene,
         mediaScene
     ]);
+
+    /* Share animations */
+    function getSkewAnimation(skew) {
+        var skewTimeline = new TimelineLite();
+        skewTimeline.to(skew, 0.5, { skewX: 45 })
+            .to(skew, 0.8, { skewX: -45 })
+            .to(skew, 0.5, { skewX: 0, skewY: 0 });
+        return skewTimeline;
+    }
 
 
 });
